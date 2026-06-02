@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { analyzeFiles } from './analyzer.js';
 import { scanFiles } from './scanner.js';
 import { getSuggestion } from './suggester.js';

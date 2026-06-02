@@ -1,5 +1,9 @@
 import { InferenceClient } from '@huggingface/inference';
 import type { Finding } from './analyzer.js';
+import dotenv from 'dotenv';
+import path from 'path';
+
+dotenv.config({ path: path.join(process.cwd(), '.env') });
 
 const hf = new InferenceClient(process.env.HF_TOKEN);
 
