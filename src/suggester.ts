@@ -1,7 +1,7 @@
 import { InferenceClient } from '@huggingface/inference';
 import type { Finding } from './analyzer.js';
 
-const hf = new InferenceClient(process.env.HF_TOKEN || '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');
+const hf = new InferenceClient(process.env.HF_TOKEN);
 
 export async function getSuggestion(finding: Finding): Promise<string> {
   const prompt = `
