@@ -7,6 +7,8 @@
   "dependencies": {
     "@huggingface/inference": "^4.13.18",
     "fast-glob": "^3.3.3",
+    "lodash": "^4.18.1",
+    "markdown-to-txt": "^2.0.1",
     "typescript": "^6.0.3"
   },
   "bin": {
@@ -19,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/lodash": "^4.17.24",
     "@types/node": "^25.9.1",
     "tsx": "^4.22.4"
   }
