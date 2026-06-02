@@ -3,6 +3,7 @@ import { scanFiles } from './scanner.js';
 import { getSuggestion } from './suggester.js';
 import * as path from 'path';
 import * as fs from 'fs';
+import {markdownToTxt} from 'markdown-to-txt';
 
 async function main(): Promise<void> {
   const files = await scanFiles();
@@ -22,7 +23,8 @@ async function main(): Promise<void> {
       const suggestion = await getSuggestion(finding);
       
       const outputPath = path.join(process.cwd(),'type-checker.md');
-      fs.writeFileSync(outputPath,suggestion);
+      const plainText = markdownToTxt(suggestion);
+      fs.writeFileSync(outputPath,plainText);
 
       console.log(`💡 Suggested Fix is written in type-checker.md file`);
     } catch (err: unknown) {
