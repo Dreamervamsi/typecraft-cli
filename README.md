@@ -1,4 +1,4 @@
-# typd ⌨️
+# typecraft-cli
 
 A minimalist, highly customizable, and distraction-free terminal-based typing test built for speed demons and keyboard enthusiasts. Test your words per minute (WPM), accuracy, and consistency right from your command line.
 
@@ -16,8 +16,15 @@ A minimalist, highly customizable, and distraction-free terminal-based typing te
 
 ## 🛠️ Installation
 
-### Prerequisites
-Make sure you have [Go](https://go.dev/) (version 1.18 or higher) installed on your system.
+## 🔑 Prerequisites
+
+This tool uses Hugging Face to generate type-fix suggestions. 
+
+1. Get a free API token from [Hugging Face](https://huggingface.co/settings/tokens).
+2. Create a `.env` file in the root of the project you want to scan.
+3. Add your token to the file:
+   ```env
+   HUGGINGFACE_TOKEN=your_hf_token_here
 
 ### Build from Source
 Clone the repository and build the binary manually:
