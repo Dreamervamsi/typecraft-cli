@@ -1,7 +1,7 @@
 import { InferenceClient } from '@huggingface/inference';
 import type { Finding } from './analyzer.js';
 
-const hf = new InferenceClient(process.env.HF_TOKEN);
+const hf = new InferenceClient(process.env.HF_TOKEN || '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');
 
 export async function getSuggestion(finding: Finding): Promise<string> {
   const prompt = `
@@ -20,7 +20,7 @@ ${finding.code}
 INSTRUCTIONS:
 1. Identify how to fix the missing type annotation.
 2. Provide a clear, brief explanation of the recommended type.
-3. Show the corrected code snippet. Keep your response concise.
+3. Give the suggestion in the form of markdown.
 `;
 
   try {

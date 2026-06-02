@@ -1,6 +1,8 @@
 import { analyzeFiles } from './analyzer.js';
 import { scanFiles } from './scanner.js';
 import { getSuggestion } from './suggester.js';
+import * as path from 'path';
+import * as fs from 'fs';
 
 async function main(): Promise<void> {
   const files = await scanFiles();
@@ -18,7 +20,11 @@ async function main(): Promise<void> {
 
     try {
       const suggestion = await getSuggestion(finding);
-      console.log(`💡 Suggested Fix:\n${suggestion}`);
+      
+      const outputPath = path.join(process.cwd(),'type-checker.md');
+      fs.writeFileSync(outputPath,suggestion);
+
+      console.log(`💡 Suggested Fix is written in type-checker.md file`);
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : String(err);
       console.error(`⚠️  Could not fetch suggestion: ${message}`);
