@@ -1,43 +1,42 @@
-# typecraft-cli
+# typecraft-cli ⚡
 
-A minimalist, highly customizable, and distraction-free terminal-based typing test built for speed demons and keyboard enthusiasts. Test your words per minute (WPM), accuracy, and consistency right from your command line.
+`typecraft-cli` is a minimal, AI-powered static analysis CLI tool that automatically detects missing TypeScript type definitions and generates accurate annotations using Hugging Face LLMs. 
+
+Instead of cluttering your terminal with clumsy or unreadable raw strings, `typecraft-cli` cleanly extracts AI suggestions and writes them directly into a beautifully organized file named `type-checker.md` right inside your working directory.
 
 ---
 
 ## 🚀 Features
 
-* **Terminal-Native:** Clean, lightweight UI that fits perfectly into your existing workflow.
-* **Real-time Stats:** Track your WPM, raw WPM, accuracy, and error count as you type.
-* **Custom Modes:** Choose between timed tests (15, 30, 60 seconds) or word-count goals.
-* **Syntax Highlighting:** Clear visual feedback for correct characters, typos, and unreached text.
-* **No Bloat:** Zero tracking, zero ads—just pure typing.
+*   **Automated Type Detection:** Scans your TypeScript files to catch missing implicit `any` types or unannotated parameters.
+*   **AI-Powered Annotations:** Leverages specialized open-source models via Hugging Face to generate precise TypeScript types.
+*   **Clean Markdown Reports:** Automatically pipes and streams the AI responses into a dedicated **`type-checker.md`** file, making it easy to read side-by-side with your code in your favorite IDE.
+*   **Zero CLI Clutter:** Keeps your terminal workspace clean while delivering comprehensive code fixes locally.
 
 ---
-
-## 🛠️ Installation
-
 ## 🔑 Prerequisites
 
-This tool uses Hugging Face to generate type-fix suggestions. 
+This tool uses a Hugging Face model to process your code and generate type-fix suggestions. You will need an API token to get started:
 
-1. Get a free API token from [Hugging Face](https://huggingface.co/settings/tokens).
-2. Create a `.env` file in the root of the project you want to scan.
-3. Add your token to the file:
-   ```env
+1. Grab a free API token directly from your [Hugging Face Settings](https://huggingface.co/settings/tokens).
+2. Create a `.env` file in the root directory of the project you want to scan.
+3. Add your token to the file like this:
+```env
    HUGGINGFACE_TOKEN=your_hf_token_here
+```   
 
-### Build from Source
-Clone the repository and build the binary manually:
+## 📦 Installation
 
-```bash
-# Clone the repository
-git clone [https://github.com/Dreamervamsi/typd.git](https://github.com/Dreamervamsi/typd.git)
+Install the package globally or locally via npm:
 
-# Navigate into the project directory
-cd typd
+# Run instantly without installing
+npx typecraft-cli
 
-# Build the project
-node build -o typd
+# Or install globally on your system
+npm install -g typecraft-cli
 
-# (Optional) Move it to your local bin to run it from anywhere
-mv typd /usr/local/bin/
+## Usage
+
+Simply execute the command in the root folder of your TypeScript project:
+
+typecraft-cli
