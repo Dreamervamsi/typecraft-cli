@@ -22,7 +22,7 @@ This tool uses a Hugging Face model to process your code and generate type-fix s
 2. Create a `.env` file in the root directory of the project you want to scan.
 3. Add your token to the file like this:
 ```env
-   HUGGINGFACE_TOKEN=your_hf_token_here
+   HF_TOKEN=your_hf_token_here
    
 
 ## 📦 Installation
@@ -37,6 +37,10 @@ npm install -g typecraft-cli
 
 ## Usage
 
+⚠️ **CRITICAL:** You must run this command strictly from your project's **root directory** (where your `package.json` and `.env` file reside). Do not execute this command from `src/` or any other subdirectories.
+
 Simply execute the command in the root folder of your TypeScript project:
 
+```bash
 typecraft-cli
+```

@@ -3,7 +3,7 @@ import type { Finding } from './analyzer.js';
 import dotenv from 'dotenv';
 import path from 'path';
 
-dotenv.config({ path: path.join(process.cwd(), '.env') });
+dotenv.config();
 
 const hf = new InferenceClient(process.env.HF_TOKEN);
 
