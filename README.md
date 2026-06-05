@@ -23,7 +23,7 @@ This tool uses a Hugging Face model to process your code and generate type-fix s
 3. Add your token to the file like this:
 ```env
    HF_TOKEN=your_hf_token_here
-   
+```
 
 ## 📦 Installation
 
